@@ -20,15 +20,18 @@ public class JumperCollision : MonoBehaviour
 
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.tag == "Player" && playerCharacter.PlayerOne)
+
+        if (other.gameObject.tag == "Player" && playerCharacter.PlayerOne)
         {
             score.PlayerOneScoreIncrease();
         }
-        if (collision.gameObject.tag == "Player" && playerCharacter.PlayerTwo)
+        if (other.gameObject.tag == "Player" && playerCharacter.PlayerTwo)
         {
             score.PlayerTwoScoreIncrease();
         }
     }
+    
 }
+

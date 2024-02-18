@@ -13,11 +13,10 @@ public class FPSInput : MonoBehaviour
 
     public bool isGrounded;
 
-    private CharacterController _charController;
+    [SerializeField] private CharacterController _charController;
 
     void Start()
     {
-        _charController = GetComponent<CharacterController>();
         jump = new Vector3(0.0f, 2.0f, 0.0f);
     }
 
@@ -30,7 +29,7 @@ public class FPSInput : MonoBehaviour
     void Update()
     {
         var hInput = Input.GetAxis("Horizontal") * speed;
-        var vInput = Input.GetAxis("Vertical");
+        var vInput = Input.GetAxis("Vertical") * speed;
 
         Vector3 movement = new Vector3(hInput, 0, vInput);
         movement.y = gravity;
@@ -40,7 +39,7 @@ public class FPSInput : MonoBehaviour
 
         if (_charController.isGrounded)
         {
-            moveVelocity = transform.forward * speed * vInput;
+
 
             if (Input.GetButtonDown("Jump"))
             {

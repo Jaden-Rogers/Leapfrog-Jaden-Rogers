@@ -6,6 +6,9 @@ public class Score : MonoBehaviour
 {
     int playerOneScore;
     int playerTwoScore;
+
+    public int scoreCooldown = 1;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +34,7 @@ public class Score : MonoBehaviour
     {
         playerTwoScore += 1;
         Debug.Log("Player Two Scored!");
-        Debug.Log($"Player One Score: {playerOneScore} Player Two Score {playerTwoScore}");
+        Debug.Log($"Player One Score: {playerOneScore} Player Two Score {playerTwoScore}");  
     }
+
 }
