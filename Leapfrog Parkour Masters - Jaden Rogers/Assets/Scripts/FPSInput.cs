@@ -8,12 +8,16 @@ public class FPSInput : MonoBehaviour
     public float gravity = -9.8f;
 
     public Vector3 jump;
-    public Vector3 moveVelocity;
+    public Vector3 moveVelocityOne;
+    public Vector3 moveVelocityTwo;
+
     public float jumpForce = 15;
 
     public bool isGrounded;
 
-    [SerializeField] private CharacterController _charController;
+    [SerializeField] private CharacterController _charControllerOne;
+    [SerializeField] private CharacterController _charControllerTwo;
+
 
     void Start()
     {
@@ -28,27 +32,66 @@ public class FPSInput : MonoBehaviour
 
     void Update()
     {
-        var hInput = Input.GetAxis("Horizontal") * speed;
-        var vInput = Input.GetAxis("Vertical") * speed;
-
-        Vector3 movement = new Vector3(hInput, 0, vInput);
-        movement.y = gravity;
-        movement *= Time.deltaTime;
-        movement = transform.TransformDirection(movement);
-        _charController.Move(movement);
-
-        if (_charController.isGrounded)
+        if (_charControllerOne)
         {
+            var hInput = Input.GetAxis("Horizontal") * speed;
+            var vInput = Input.GetAxis("Vertical") * speed;
 
+            Vector3 movement = new Vector3(hInput, 0, vInput);
+            movement.y = gravity;
+            movement *= Time.deltaTime;
+            movement = transform.TransformDirection(movement);
+            _charControllerOne.Move(movement);
 
-            if (Input.GetButtonDown("Jump"))
+            if (_charControllerOne.isGrounded)
             {
-                moveVelocity.y = jumpForce;
-                
+
+
+                if (Input.GetButtonDown("Jump"))
+                {
+                    moveVelocityOne.y = jumpForce;
+
+                }
             }
+            //Adding gravity
+            moveVelocityOne.y += gravity * Time.deltaTime;
+            _charControllerOne.Move(moveVelocityOne * Time.deltaTime);
         }
-        //Adding gravity
-        moveVelocity.y += gravity * Time.deltaTime;
-        _charController.Move(moveVelocity * Time.deltaTime);
+        if (_charControllerTwo)
+        {
+            var horizontal = 0;
+            if (Input.GetKey(KeyCode.J)) horizontal = -1;
+            if (Input.GetKey(KeyCode.L)) horizontal += 1;
+            var hInput = horizontal * speed;
+
+            var vertical = 0;
+            if (Input.GetKey(KeyCode.I)) vertical = 1;
+            if (Input.GetKey(KeyCode.K)) vertical -= 1;
+            var vInput = vertical * speed;
+
+            Vector3 movement = new Vector3(hInput, 0, vInput);
+            movement.y = gravity;
+            movement *= Time.deltaTime;
+            movement = transform.TransformDirection(movement);
+            _charControllerTwo.Move(movement);
+
+            if (_charControllerTwo.isGrounded)
+            {
+
+
+                if (Input.GetButtonDown(KeyCode.P.ToString()))
+                {
+                    
+                    moveVelocityTwo.y = jumpForce;
+
+                }
+            }
+            //Adding gravity
+            moveVelocityTwo.y += gravity * Time.deltaTime;
+            _charControllerTwo.Move(moveVelocityTwo * Time.deltaTime);
+        }
+      
     }
+
+
 }

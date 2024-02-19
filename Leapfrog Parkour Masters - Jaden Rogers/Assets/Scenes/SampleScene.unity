@@ -575,7 +575,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 95c45a38a9be3d24984ead4bcd2c7fcd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -774,7 +774,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 95c45a38a9be3d24984ead4bcd2c7fcd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1181,7 +1181,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 95c45a38a9be3d24984ead4bcd2c7fcd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1260,10 +1260,12 @@ MonoBehaviour:
   speed: 10
   gravity: -20
   jump: {x: 0, y: 0, z: 0}
-  moveVelocity: {x: 0, y: 0, z: 0}
+  moveVelocityOne: {x: 0, y: 0, z: 0}
+  moveVelocityTwo: {x: 0, y: 0, z: 0}
   jumpForce: 35
   isGrounded: 1
-  _charController: {fileID: 0}
+  _charControllerOne: {fileID: 0}
+  _charControllerTwo: {fileID: 0}
 --- !u!65 &1361470098
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1305,7 +1307,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: cc3210e3235699c45ba1c51972bd29b5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1571,7 +1573,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 95c45a38a9be3d24984ead4bcd2c7fcd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1788,6 +1790,7 @@ GameObject:
   - component: {fileID: 2085471709}
   - component: {fileID: 2085471707}
   - component: {fileID: 2085471706}
+  - component: {fileID: 2085471713}
   m_Layer: 0
   m_Name: Player Two
   m_TagString: Player
@@ -1876,7 +1879,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 5879b666f61d46e40b9068ad6363fc6d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1922,6 +1925,27 @@ Transform:
   - {fileID: 609744787}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2085471713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2085471705}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00a9dd2e48c5c30478fb2baeecfcdb98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 10
+  gravity: -20
+  jump: {x: 0, y: 0, z: 0}
+  moveVelocityOne: {x: 0, y: 0, z: 0}
+  moveVelocityTwo: {x: 0, y: 0, z: 0}
+  jumpForce: 35
+  isGrounded: 1
+  _charControllerOne: {fileID: 1361470102}
+  _charControllerTwo: {fileID: 2085471707}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
