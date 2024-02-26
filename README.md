@@ -19,3 +19,5 @@ Right - L
 Left - J
 Back - K
 Jump - P
+
+2/25/2024 - Added Score UI for Player One and Player Two

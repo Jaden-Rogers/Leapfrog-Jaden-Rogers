@@ -1,13 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Score : MonoBehaviour
 {
-    int playerOneScore;
-    int playerTwoScore;
+    public int playerOneScore;
+    public int playerTwoScore;
 
-    public int scoreCooldown = 1;
+    public Text playerOneScoreText;
+    public Text playerTwoScoreText;
+
 
     // Start is called before the first frame update
     void Start()
@@ -15,7 +18,9 @@ public class Score : MonoBehaviour
         playerOneScore = 0;
         playerTwoScore = 0;
 
-        Debug.Log($"Player One Score: {playerOneScore} Player Two Score {playerTwoScore}");
+        playerOneScoreText.text = ("Player One Score: " + playerOneScore.ToString());
+        playerTwoScoreText.text = ("Player Two Score: " + playerTwoScore.ToString());
+
     }
 
     // Update is called once per frame
@@ -27,14 +32,12 @@ public class Score : MonoBehaviour
     public void PlayerOneScoreIncrease()
     {
         playerOneScore += 1;
-        Debug.Log("Player One Scored!");
-        Debug.Log($"Player One Score: {playerOneScore} Player Two Score {playerTwoScore}");
+        playerOneScoreText.text = ("Player One Score: " + playerOneScore.ToString());
     }
     public void PlayerTwoScoreIncrease()
     {
         playerTwoScore += 1;
-        Debug.Log("Player Two Scored!");
-        Debug.Log($"Player One Score: {playerOneScore} Player Two Score {playerTwoScore}");  
+        playerTwoScoreText.text = ("Player Two Score: " + playerTwoScore.ToString());
     }
 
 }
