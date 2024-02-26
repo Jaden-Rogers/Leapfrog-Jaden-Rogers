@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,6 +11,10 @@ public class Score : MonoBehaviour
 
     public Text playerOneScoreText;
     public Text playerTwoScoreText;
+    public Text winText;
+
+    public int winScore;
+    private bool canWin = true;
 
 
     // Start is called before the first frame update
@@ -20,13 +25,17 @@ public class Score : MonoBehaviour
 
         playerOneScoreText.text = ("Player One Score: " + playerOneScore.ToString());
         playerTwoScoreText.text = ("Player Two Score: " + playerTwoScore.ToString());
+        winText.text = ("");
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (playerOneScore == winScore && canWin || playerTwoScore == winScore && canWin)
+        {
+            PlayerWin();
+        }
     }
 
     public void PlayerOneScoreIncrease()
@@ -38,6 +47,20 @@ public class Score : MonoBehaviour
     {
         playerTwoScore += 1;
         playerTwoScoreText.text = ("Player Two Score: " + playerTwoScore.ToString());
+    }
+
+    public void PlayerWin()
+    {
+        if (playerOneScore == winScore)
+        {
+            winText.text = ("Player One Wins!");
+        }
+        else if (playerTwoScore == winScore)
+        {
+            winText.text = ("Player Two Wins!");
+        }
+
+        canWin = false;
     }
 
 }
