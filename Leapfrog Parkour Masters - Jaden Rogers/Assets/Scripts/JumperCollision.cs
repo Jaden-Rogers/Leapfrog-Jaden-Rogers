@@ -26,6 +26,7 @@ public class JumperCollision : MonoBehaviour
         if (other.gameObject.tag == "Player" && playerCharacter.PlayerOne)
         {
             score.PlayerOneScoreIncrease();
+
         }
         if (other.gameObject.tag == "Player" && playerCharacter.PlayerTwo)
         {
