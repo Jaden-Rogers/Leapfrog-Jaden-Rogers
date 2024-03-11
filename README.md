@@ -1,7 +1,6 @@
 # Leapfrog-Jaden-Rogers
 
-This is a game where the objective is to jump over your opponent as many times as possible and collect items.
-Achieve 5 score to win!
+This is a game where the objective is to jump to the end of the obstacle course before your opponent does.
 
 Player One Controls:
 
@@ -26,3 +25,5 @@ Jump - P
 3/3/2024 - Added Health Manager
 3/3/2024 - Added Manager of Managers
 3/3/2024 - Picking up items now increases score by 1
+3/11/2024 - Removed Jumping to score points, reach the item instead to win
+3/11/2024 - Added Timer
