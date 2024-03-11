@@ -41,12 +41,12 @@ public class Score : MonoBehaviour
     public void PlayerOneScoreIncrease()
     {
         playerOneScore += 1;
-        playerOneScoreText.text = ("Player One Score: " + playerOneScore.ToString());
+        //playerOneScoreText.text = ("Player One Score: " + playerOneScore.ToString());
     }
     public void PlayerTwoScoreIncrease()
     {
         playerTwoScore += 1;
-        playerTwoScoreText.text = ("Player Two Score: " + playerTwoScore.ToString());
+        //playerTwoScoreText.text = ("Player Two Score: " + playerTwoScore.ToString());
     }
 
     public void PlayerWin()

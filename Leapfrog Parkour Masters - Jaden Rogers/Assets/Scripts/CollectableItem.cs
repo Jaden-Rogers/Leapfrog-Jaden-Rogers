@@ -23,7 +23,7 @@ public class CollectibleItem : MonoBehaviour
             score.PlayerOneScoreIncrease();
 
         }
-        if (other.gameObject.tag == "Player Two")
+        if (other.gameObject.name == "Player Two")
         {
             score.PlayerTwoScoreIncrease();
         }
